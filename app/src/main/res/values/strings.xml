@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Solicitud prestamo</string>
+    <string name="solicitud_de_prestamo">Solicitud de Prestamo</string>
+    <string name="textview3">TextView</string>
+    <string name="textview4">TextView</string>
+    <string name="textviewNombre">TextView</string>
+    <string name="Registro">Registro del cliente</string>
+    <string name="Nombre">Nombre:</string>
+    <string name="Apellido">Apellido:</string>
+    <string name="PlaceholderNombre">Ingrese el nombre</string>
+    <string name="PlaceholderApellido">Ingrese el apellido</string>
+    <string name="textviewSexo">Sexo:</string>
+    <string name="textPlaceholderTelefono">Numero de Telefono</string>
+    <string name="textviewTelefono">Telefono:</string>
+    <string name="PlaceholderCedula">Ingrese su numero de cedula</string>
+    <string name="textviewCedula">Cedula:</string>
+    <string name="PlaceholderOcupacion">Ingrese su ocupacion</string>
+    <string name="textviewOcupacion">Ocupacion:</string>
+    <string name="PlaceholderDireccion">Ingrese su direccion de domicilio</string>
+    <string name="textviewDireccion">Direccion:</string>
+    <string name="buttonContinuar">Continuar</string>
+    <string-array name="Spinner_items">
+        <item name="1" type="string">Masculino</item>
+        <item name="2" type="string">Femenino</item>
+    </string-array>
+
+    <string name="textViewRegistroCredito">Registro del Credito</string>
+    <string name="textViewMontoCredito">Monto de Credito</string>
+    <string name="editTextMontoPlaceholder">Monto (NIO)</string>
+    <string name="textViewInteres">Intereses:(%)</string>
+    <string name="textViewPlazo">Plazo:</string>
+    <string name="textViewNumberPlace">Meses</string>
+    <string name="textViewFecha">Fecha de Inicio:</string>
+    <string name="editTextFechaPlaceholder">Dia/Mes/Año</string>
+    <string name="textViewFechaFinalizacion">Fecha de Finalizacion:</string>
+    <string name="editTextFechaFinalizacionPlaceholder">Dia/Mes/Año</string>
+    <string name="textViewMontoaPagar">Monto a Pagar:</string>
+    <string name="textViewMontoaPagarPlaceholder">0.00 NIO</string>
+    <string name="textViewMontoporCuota">Monto por Cuota:</string>
+    <string name="textViewMontoporCuotaPlaceholder">0.00 NIO</string>
+    <string name="buttonSubmit">Finalizar Prestamo</string>
+
+    <string-array name="Spinner_items_credits">
+        <item name="1." type="string">15</item>
+        <item name="2." type="string">20</item>
+        <item name="3." type="string">25</item>
+        <item name="4." type="string">30</item>
+    </string-array>
+
+</resources>
