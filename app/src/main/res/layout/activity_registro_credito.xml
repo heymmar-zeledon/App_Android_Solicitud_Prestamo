@@ -3,9 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/EditTextMontoPagoTotal"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".RegistryCredit">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/action_toolbar"
+        android:layout_width="410dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/textViewFechaFinal"
@@ -46,10 +55,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewMontoTotal"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.121" />
 
     <TextView
         android:id="@+id/textViewMontoaPagar"
@@ -60,10 +69,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewFechaFinal"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.085" />
 
     <TextView
         android:id="@+id/textViewFechaFinalizacion"
@@ -74,10 +83,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintHorizontal_bias="0.031"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewFechaInicio"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/textViewFecha"
@@ -89,10 +98,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextMonto"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.02" />
 
     <TextView
         android:id="@+id/textViewIntereses"
@@ -103,15 +112,15 @@
         android:text="@string/textViewInteres"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRegistroCredito" />
 
     <Spinner
         android:id="@+id/spinnerInteres"
-        android:layout_width="95dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="85dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:dropDownWidth="180dp"
         android:entries="@array/Spinner_items_credits"
@@ -119,7 +128,7 @@
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/textViewFecha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/editTextMonto"
         app:layout_constraintTop_toBottomOf="@+id/textViewIntereses"
         app:layout_constraintVertical_bias="0.0"
@@ -129,6 +138,7 @@
         android:id="@+id/textViewMontoCredito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
         android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/textViewMontoCredito"
@@ -147,16 +157,15 @@
         android:text="@string/textViewPlazo"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintHorizontal_bias="0.789"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRegistroCredito" />
 
     <TextView
         android:id="@+id/textViewRegistroCredito"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="768dp"
+        android:layout_width="182dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:includeFontPadding="true"
         android:text="@string/textViewRegistroCredito"
@@ -164,34 +173,16 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintHorizontal_bias="0.039"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1"
+        app:layout_constraintTop_toBottomOf="@+id/include"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="382dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="659dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="@string/solicitud_de_prestamo"
-        android:textColor="#2F43B6"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/editTextMonto"
-        android:layout_width="134dp"
-        android:layout_height="48dp"
+        android:layout_width="142dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:autofillHints=""
         android:ems="10"
@@ -200,7 +191,7 @@
         android:maxLength="6"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewMontoCredito" />
 
@@ -208,7 +199,7 @@
         android:id="@+id/buttonsubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="108dp"
         android:backgroundTint="#358838"
         android:fontFamily="sans-serif-medium"
         android:shadowColor="#41AC46"
@@ -222,9 +213,11 @@
 
     <EditText
         android:id="@+id/editTextNumber"
-        android:layout_width="114dp"
-        android:layout_height="48dp"
+        android:layout_width="120dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/textViewNumberPlace"
@@ -232,7 +225,7 @@
         android:maxLength="2"
         android:textColorHint="#4A4646"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/spinnerInteres"
         app:layout_constraintTop_toBottomOf="@+id/textViewPlazo" />
 
@@ -264,5 +257,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewMontoCuota"
         tools:text="@string/textViewMontoporCuotaPlaceholder" />
+
+    <TextView
+        android:id="@+id/detallesCliente"
+        android:layout_width="178dp"
+        android:layout_height="219dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/detalles_del_cliente"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMonto"
+        app:layout_constraintVertical_bias="0.105" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

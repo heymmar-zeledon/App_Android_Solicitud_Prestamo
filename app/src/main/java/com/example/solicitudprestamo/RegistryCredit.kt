@@ -2,12 +2,15 @@
 package com.example.solicitudprestamo
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,9 +20,17 @@ class RegistryCredit : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var adaptadorSpinner: ArrayAdapter<String>
     private var bool: Boolean = false
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro_credito)
+
+        val mToolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(mToolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        mToolbar.setNavigationOnClickListener {
+            showDialog()
+        }
 
         val spinner = findViewById<Spinner>(R.id.spinnerInteres)
         val lista: Array<String> = resources.getStringArray(R.array.Spinner_items_credits)
@@ -35,6 +46,16 @@ class RegistryCredit : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         }
         else{
             Toast.makeText(this,"Cliente: "+ client.Nombre + " " + client.Apellido + " Guardado correctamente!",Toast.LENGTH_LONG).show()
+            val msjDetails = findViewById<TextView>(R.id.detallesCliente)
+
+            val clientDetName = "Nombre: " + client.Nombre
+            val clientDetApellido = "Apellido: " + client.Apellido
+            val clientDetCedula = "Cedula: " + client.Cedula
+            val msjView = getText(R.string.detalles_del_cliente).toString()
+            msjDetails.text = msjView + "\n\n" +
+                    clientDetName + "\n\n" +
+                    clientDetApellido + "\n\n" +
+                    clientDetCedula
         }
 
         val dater = findViewById<TextView>(R.id.textViewFechaInicio)
@@ -155,8 +176,8 @@ class RegistryCredit : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
         })
 
-        val Finalizar = findViewById<Button>(R.id.buttonsubmit)
-        Finalizar.setOnClickListener() {
+        val finalizar = findViewById<Button>(R.id.buttonsubmit)
+        finalizar.setOnClickListener {
             finishAffinity()
         }
     }
@@ -249,4 +270,46 @@ class RegistryCredit : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         }
         return num
     }
+
+    private fun showDialog(){
+        lateinit var dialog: AlertDialog
+
+        // Nueva instancia de alert dialog builder object
+        val builder = AlertDialog.Builder(this)
+
+        // Titulo
+        builder.setTitle("¿Estas seguro que deseas salir?")
+
+        // Set a message for alert dialog
+        builder.setMessage("¡Se borraran todos los datos introducidos!")
+
+
+        // Botones
+        val dialogClickListener = DialogInterface.OnClickListener{ _, which ->
+            when(which){
+                DialogInterface.BUTTON_POSITIVE -> super.onSupportNavigateUp()
+                //DialogInterface.BUTTON_NEGATIVE -> Toast.makeText(this,"Negativo/Boton no pulsado",
+                //   Toast.LENGTH_LONG).show()
+                DialogInterface.BUTTON_NEUTRAL -> Toast.makeText(this,"Continuacion del préstamo",
+                    Toast.LENGTH_LONG).show()
+            }
+        }
+
+        // alert dialog positivo/boton de aceptar
+        builder.setPositiveButton("Aceptar",dialogClickListener)
+
+        // alert dialog negativo/boton de rechazar
+        //builder.setNegativeButton("Rechazar",dialogClickListener)
+
+        // alert dialog neutral/cancel button
+        builder.setNeutralButton("Cancelar",dialogClickListener)
+
+
+        // Inicializando el AlertDialog usando el builder object
+        dialog = builder.create()
+
+        // Despliegue del alert dialog
+        dialog.show()
+    }
+
 }

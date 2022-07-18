@@ -3,8 +3,11 @@ package com.example.solicitudprestamo
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.solicitudprestamo.databinding.ActivityMainBinding
 
@@ -16,6 +19,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        Toolbar().showToolbar(
+            this,
+            "Registro de cliente",
+            false
+        )
 
         val spinner = findViewById<Spinner>(R.id.spinnerSexo)
         val lista = resources.getStringArray(R.array.Spinner_items)
@@ -61,6 +70,24 @@ class MainActivity : AppCompatActivity() {
                 registroCreditoView(cPrest)
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_contextual, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.opcion_1){
+            Toast.makeText(this,"Aqui veremos el registro con SQLite",
+                Toast.LENGTH_LONG).show()
+        }
+
+        if(item.itemId == R.id.opcion_2){
+            Toast.makeText(this,"Aqui veremos el menu principal",
+                Toast.LENGTH_LONG).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun registroCreditoView(dat: ClientePrestamo){

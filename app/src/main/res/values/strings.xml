@@ -4,7 +4,7 @@
     <string name="textview3">TextView</string>
     <string name="textview4">TextView</string>
     <string name="textviewNombre">TextView</string>
-    <string name="Registro">Registro del cliente</string>
+    <string name="Registro">Nuevo cliente:</string>
     <string name="Nombre">Nombre:</string>
     <string name="Apellido">Apellido:</string>
     <string name="PlaceholderNombre">Ingrese el nombre</string>
@@ -17,15 +17,15 @@
     <string name="PlaceholderOcupacion">Ingrese su ocupacion</string>
     <string name="textviewOcupacion">Ocupacion:</string>
     <string name="PlaceholderDireccion">Ingrese su direccion de domicilio</string>
-    <string name="textviewDireccion">Direccion:</string>
+    <string name="textviewDireccion">Dirección:</string>
     <string name="buttonContinuar">Continuar</string>
     <string-array name="Spinner_items">
         <item name="1" type="string">Masculino</item>
         <item name="2" type="string">Femenino</item>
     </string-array>
 
-    <string name="textViewRegistroCredito">Registro del Credito</string>
-    <string name="textViewMontoCredito">Monto de Credito</string>
+    <string name="textViewRegistroCredito">Nuevo Crédito</string>
+    <string name="textViewMontoCredito">Cantidad:($)</string>
     <string name="editTextMontoPlaceholder">Monto (NIO)</string>
     <string name="textViewInteres">Intereses:(%)</string>
     <string name="textViewPlazo">Plazo:</string>
@@ -39,6 +39,9 @@
     <string name="textViewMontoporCuota">Monto por Cuota:</string>
     <string name="textViewMontoporCuotaPlaceholder">0.00 NIO</string>
     <string name="buttonSubmit">Finalizar Prestamo</string>
+    <string name="detalles_del_cliente">Detalles del cliente:</string>
+    <string name="registro">Ver Registros</string>
+    <string name="Nuevo_Cliente">Nuevo Cliente</string>
 
     <string-array name="Spinner_items_credits">
         <item name="1." type="string">15</item>

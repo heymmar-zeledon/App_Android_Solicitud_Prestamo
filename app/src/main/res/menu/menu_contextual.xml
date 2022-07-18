@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/opcion_1"
+        android:title="@string/registro"
+        />
+
+    <item
+        android:id="@+id/opcion_2"
+        android:title="@string/Nuevo_Cliente"
+        />
+</menu>

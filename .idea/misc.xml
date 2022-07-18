@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/Solicitudprestamo/app/src/main/res/layout/action_toolbar.xml" value="0.1" />
         <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/Solicitudprestamo/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/Solicitudprestamo/app/src/main/res/layout/activity_registro_credito.xml" value="0.22" />
+        <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/Solicitudprestamo/app/src/main/res/layout/activity_registro_credito.xml" value="0.25" />
+        <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/Solicitudprestamo/app/src/main/res/menu/menu_contextual.xml" value="0.25" />
       </map>
     </option>
   </component>
