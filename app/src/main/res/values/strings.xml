@@ -42,6 +42,7 @@
     <string name="detalles_del_cliente">Detalles del cliente:</string>
     <string name="registro">Ver Registros</string>
     <string name="Nuevo_Cliente">Nuevo Cliente</string>
+    <string name="imgprestamo">ImgPrestamo</string>
 
     <string-array name="Spinner_items_credits">
         <item name="1." type="string">15</item>
