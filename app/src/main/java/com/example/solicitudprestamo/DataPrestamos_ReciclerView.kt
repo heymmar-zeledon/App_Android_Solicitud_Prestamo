@@ -1,6 +1,6 @@
 package com.example.solicitudprestamo
 
-class DataPrestamos_ReciclerView(
+data class DataPrestamos_ReciclerView(
     val Nombre: String,
     val Apellido: String,
     val Cedula: String,
