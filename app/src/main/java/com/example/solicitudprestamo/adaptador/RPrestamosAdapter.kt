@@ -2,11 +2,12 @@ package com.example.solicitudprestamo.adaptador
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.solicitudprestamo.Prestamos
+import com.example.solicitudprestamo.DataPrestamos_ReciclerView
 import com.example.solicitudprestamo.R
 
-class RPrestamosAdapter(private val listRegistrosPrestamos:List<Prestamos>) : RecyclerView.Adapter<RegPrestamosViewHolder>() {
+class RPrestamosAdapter(private val listRegistrosPrestamos:List<DataPrestamos_ReciclerView>) : RecyclerView.Adapter<RegPrestamosViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RegPrestamosViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return RegPrestamosViewHolder(layoutInflater.inflate(R.layout.item_prestamo, parent, false))
