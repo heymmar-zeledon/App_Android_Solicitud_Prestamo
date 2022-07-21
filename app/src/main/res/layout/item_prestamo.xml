@@ -2,72 +2,75 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginHorizontal="8dp"
-    android:layout_marginVertical="4dp"
+    android:layout_height="150dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/ImagePreview"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:contentDescription="@string/imgprestamo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/black"
-        tools:srcCompat="@drawable/_14_1149972_avatar_free_png_image_avatar_png" />
 
+        <ImageView
+            android:id="@+id/ImagePreview"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/imgprestamo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/black"
+            tools:srcCompat="@drawable/_14_1149972_avatar_free_png_image_avatar_png" />
 
-    <TextView
-        android:id="@+id/ClienteNombre"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/ImagePreview"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Nombre del cliente" />
+        <TextView
+            android:id="@+id/ClienteNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/ImagePreview"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Nombre del cliente" />
 
-    <TextView
-        android:id="@+id/Monto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintStart_toStartOf="@+id/ImagePreview"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Monto del prestamo" />
+        <TextView
+            android:id="@+id/Monto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintStart_toStartOf="@+id/ImagePreview"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Monto del prestamo" />
 
-    <TextView
-        android:id="@+id/FechaInit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="64dp"
-        app:layout_constraintStart_toStartOf="@+id/ImagePreview"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Fecha de inicio del prestamo" />
+        <TextView
+            android:id="@+id/FechaInit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintStart_toStartOf="@+id/ImagePreview"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Fecha de inicio del prestamo" />
 
-    <TextView
-        android:id="@+id/FechaFin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="92dp"
-        app:layout_constraintStart_toStartOf="@+id/ImagePreview"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Fecha de Finzalizacion del prestamo" />
+        <TextView
+            android:id="@+id/FechaFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="92dp"
+            app:layout_constraintStart_toStartOf="@+id/ImagePreview"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Fecha de Finzalizacion del prestamo" />
 
-    <TextView
-        android:id="@+id/Estado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="118dp"
-        app:layout_constraintStart_toStartOf="@+id/ImagePreview"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Estado del prestamo" />
+        <TextView
+            android:id="@+id/Estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="118dp"
+            android:text="@string/EstadoPrestamo"
+            app:layout_constraintStart_toStartOf="@+id/ImagePreview"
+            app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

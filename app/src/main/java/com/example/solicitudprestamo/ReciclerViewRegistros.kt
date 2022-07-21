@@ -1,7 +1,9 @@
 package com.example.solicitudprestamo
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +14,13 @@ class ReciclerViewRegistros : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reciclerview_registros)
+
+        Toolbar().showToolbar(
+            this,
+            "Registros de Prestamos",
+            true
+        )
+
         iniciarReciclerView()
     }
 

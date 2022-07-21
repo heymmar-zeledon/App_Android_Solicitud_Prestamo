@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/App_Android_Solicitud_Prestamo/app/src/main/res/layout/activity_reciclerview_registros.xml" value="0.33" />
+        <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/App_Android_Solicitud_Prestamo/app/src/main/res/layout/activity_registro_credito.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/App_Android_Solicitud_Prestamo/app/src/main/res/layout/item_prestamo.xml" value="0.44609665427509293" />
+        <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/App_Android_Solicitud_Prestamo/app/src/main/res/menu/menu_contextual.xml" value="0.7029126213592233" />
         <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/Solicitudprestamo/app/src/main/res/layout/action_toolbar.xml" value="0.1" />
         <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/Solicitudprestamo/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Eliazith Zeledon/AndroidStudioProjects/Solicitudprestamo/app/src/main/res/layout/activity_reciclerview_registros.xml" value="0.5" />

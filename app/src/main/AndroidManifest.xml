@@ -13,6 +13,12 @@
             android:name="RegistryCredit"
             android:parentActivityName=".MainActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".ReciclerViewRegistros"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

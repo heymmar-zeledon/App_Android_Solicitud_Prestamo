@@ -79,8 +79,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.opcion_1){
-            Toast.makeText(this,"Aqui veremos el registro con SQLite",
+            Toast.makeText(this,"Visualizando Registros",
                 Toast.LENGTH_LONG).show()
+            startActivity(Intent(this, ReciclerViewRegistros::class.java ))
         }
 
         if(item.itemId == R.id.opcion_2){
