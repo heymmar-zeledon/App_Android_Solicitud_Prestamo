@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.solicitudprestamo.databinding.ActivityRegistroCreditoBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -19,11 +20,12 @@ class RegistryCredit : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     private lateinit var adaptadorSpinner: ArrayAdapter<String>
     private var bool: Boolean = false
-
+    private lateinit var Viewbinding: ActivityRegistroCreditoBinding
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registro_credito)
+        Viewbinding = ActivityRegistroCreditoBinding.inflate(layoutInflater)
+        setContentView(Viewbinding.root)
 
         val mToolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(mToolbar)
@@ -176,10 +178,44 @@ class RegistryCredit : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
         })
 
-        val finalizar = findViewById<Button>(R.id.buttonsubmit)
-        finalizar.setOnClickListener {
-            finishAffinity()
+        val guardarPrestamo = findViewById<Button>(R.id.buttonsubmit)
+        guardarPrestamo.setOnClickListener {
+            val client2 = intent.extras?.getParcelable<ClientePrestamo>("ClienteDat")
+
+            if(client2==null){
+                Toast.makeText(this,"Los datos no fueron Guardados!",Toast.LENGTH_LONG).show()
+            }
+            //Validaciones finales antes de enviar a la base de datos.
+            var errors = false
+            if(monto.text.toString().isEmpty()){
+                monto.error = "Campo Vacio"
+                errors = true
+            }
+            else if(Viewbinding.editTextNumber.text.toString().isEmpty()){
+                Viewbinding.editTextNumber.error = "Campo Vacio"
+                errors = true
+            }
+
+            if(!errors){
+                var objPrestamo = client2?.let { it1 -> DataPrestamos_ReciclerView(
+                    it1.Nombre,
+                    it1.Apellido,
+                    it1.Cedula,
+                    it1.Telefono.toInt(),
+                    it1.Sexo,
+                    it1.Ocupacion,
+                    it1.Direccion,
+                    Viewbinding.editTextMonto.text.toString().toInt(),
+                    dater.text.toString(),
+                    Viewbinding.textViewFechaFinal.text.toString(),
+                    Viewbinding.textViewMontoTotal.text.toString().toInt(),
+                    Viewbinding.textViewMontoCuotaR.text.toString().toInt(),
+                    Viewbinding.editTextNumber.text.toString().toInt()
+                )
+                }
+            }
         }
+
     }
 
     @SuppressLint("SimpleDateFormat")
