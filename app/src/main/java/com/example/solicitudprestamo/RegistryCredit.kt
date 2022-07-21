@@ -1,4 +1,3 @@
-
 package com.example.solicitudprestamo
 
 import android.annotation.SuppressLint
@@ -11,7 +10,10 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.lifecycleScope
+import androidx.room.Room.*
 import com.example.solicitudprestamo.databinding.ActivityRegistroCreditoBinding
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -21,11 +23,20 @@ class RegistryCredit : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var adaptadorSpinner: ArrayAdapter<String>
     private var bool: Boolean = false
     private lateinit var Viewbinding: ActivityRegistroCreditoBinding
+
+
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Viewbinding = ActivityRegistroCreditoBinding.inflate(layoutInflater)
         setContentView(Viewbinding.root)
+
+        /*Crear una instancia de room*/
+        val room:PrestamoDB
+        room = databaseBuilder(this,PrestamoDB::class.java,"prestamos").build()
+
+
 
         val mToolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(mToolbar)
@@ -177,15 +188,17 @@ class RegistryCredit : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 }
             }
         })
+        val client2 = intent.extras?.getParcelable<ClientePrestamo>("ClienteDat")
 
         val guardarPrestamo = findViewById<Button>(R.id.buttonsubmit)
         guardarPrestamo.setOnClickListener {
-            val client2 = intent.extras?.getParcelable<ClientePrestamo>("ClienteDat")
+
 
             if(client2==null){
                 Toast.makeText(this,"Los datos no fueron Guardados!",Toast.LENGTH_LONG).show()
             }
             //Validaciones finales antes de enviar a la base de datos.
+
             var errors = false
             if(monto.text.toString().isEmpty()){
                 monto.error = "Campo Vacio"
@@ -197,22 +210,36 @@ class RegistryCredit : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
 
             if(!errors){
-                var objPrestamo = client2?.let { it1 -> DataPrestamos_ReciclerView(
-                    it1.Nombre,
+
+                val objPrestamo = client2?.let { it1 -> Prestamo(
+                    2,it1.Nombre,
                     it1.Apellido,
                     it1.Cedula,
                     it1.Telefono.toInt(),
                     it1.Sexo,
                     it1.Ocupacion,
-                    it1.Direccion,
-                    Viewbinding.editTextMonto.text.toString().toInt(),
-                    dater.text.toString(),
-                    Viewbinding.textViewFechaFinal.text.toString(),
-                    Viewbinding.textViewMontoTotal.text.toString().toInt(),
-                    Viewbinding.textViewMontoCuotaR.text.toString().toInt(),
-                    Viewbinding.editTextNumber.text.toString().toInt()
+                    it1.Direccion
+//                    Viewbinding.editTextMonto.text.toString().toInt(),
+//                    dater.text.toString(),
+//                    Viewbinding.textViewFechaFinal.text.toString(),
+//                    Viewbinding.textViewMontoTotal.text.toString().toInt(),
+//                    Viewbinding.textViewMontoCuotaR.text.toString().toInt(),
+//                    Viewbinding.editTextNumber.text.toString().toInt()
                 )
                 }
+
+                val dao = room.prestamoDao()
+                var listPresta: List<Prestamo>? =null
+                if (objPrestamo != null) {
+                    lifecycleScope.launch {
+                        dao.insert(objPrestamo)
+                        listPresta = dao.getAll()
+                    }
+                    Toast.makeText(this, listPresta?.get(0)?.Nombre ?: "No paso nada", Toast.LENGTH_SHORT).show()
+                }
+
+
+
             }
         }
 
